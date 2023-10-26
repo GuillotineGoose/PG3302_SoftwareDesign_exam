@@ -1,0 +1,107 @@
+﻿@startuml
+'https://plantuml.com/class-diagram
+
+StartGame *-- DirectionEnums
+StartGame --* Board
+StartGame --* Snake
+StartGame *-- Player
+StartGame *-- ScoreBoard
+Player *-- MultiPlayer
+Player *-- ScoreBoard
+Snake *-- Tile
+Snake *-- DirectionEnums
+Board *-- Tile
+Apple .. PositionApple
+Program --* StartGame
+ScoreSave --* Player
+Iapple --* Apple
+Iapple --* PositionApple
+Iapple *-- Board
+
+
+interface Iapple{
+
+}
+
+class Program {
+    Main()
+}
+
+class ScoreSave{
+
+}
+
+class Board{
+  _BoardW
+  _BoardH
+  
+  CreateBoard()
+  CheckEdge()
+}
+
+class MultiPlayer{
+    
+}
+
+class Player{
+ _Name
+ _ID
+ _CurrentScore
+ _Password?
+ 
+}
+
+class ScoreBoard{
+    WriteScore()
+    AddScore()
+}
+
+class Snake{
+   _snake-body
+   _head
+   _tail
+   _length
+   GetHeadX()
+   GetHeadY()
+   Snake()
+   GenerateSnake()
+   MoveSnake()
+   GetCoordinates()
+   AteItself()
+}
+
+class Apple{
+  GenerateApple()
+  getCoordinates()
+
+}
+
+class PositionApple{
+  GenerateApple()
+  getCoordinates()
+
+}
+
+class StartGame{
+    Hello()
+}
+
+class Tile{
+    _Tile
+    _Int x
+    _Int y
+    Tile()
+    ChangeTile()
+    GetTile()
+    GetCoordinates()
+    AddApple()
+}
+
+enum DirectionEnums {
+UP
+RIGHT
+DOWN
+LEFT
+}
+
+@enduml

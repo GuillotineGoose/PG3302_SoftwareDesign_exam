@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>snake</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestSnake\**" />
+    <EmbeddedResource Remove="TestSnake\**" />
+    <None Remove="TestSnake\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="games\SnakeGame\SnakeObjects\Enums\MovementChoices.cs" />
+    <Compile Remove="games\SnakeGame\Game.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="games\SnakeGame\SnakeObjects\Enums\Ate" />
+    <None Remove="games\SnakeGame\SnakeObjects\Enums\NewFile1.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="games\SnakeGame\SinglePlayer" />
+  </ItemGroup>
+
+</Project>
